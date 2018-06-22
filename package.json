@@ -1,0 +1,43 @@
+{
+  "name": "bravi-assessment-api",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "repository": "https://github.com/matheusmariano/bravi-assessment-api",
+  "author": "Matheus Mariano <vmatheus.mariano@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.1.1",
+    "@types/node": "^10.3.4",
+    "concurrently": "^3.6.0",
+    "jest": "^23.1.0",
+    "supertest": "^3.1.0",
+    "ts-jest": "^22.4.6",
+    "tslint": "^5.10.0",
+    "tslint-config-airbnb": "^5.9.2",
+    "typescript": "^2.9.2"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(tsx?)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json"
+    ]
+  },
+  "scripts": {
+    "dev": "concurrently \"npm run tsc -- --watch\" \"npx nodemon dist/index.js\"",
+    "lint": "npx tslint -c tslint.json -e \"node_modules/**/*.ts\" \"**/*.ts\"",
+    "start": "node dist/index.js",
+    "test": "npx jest --config=package.json",
+    "tsc": "npx tsc"
+  }
+}

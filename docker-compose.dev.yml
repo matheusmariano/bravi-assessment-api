@@ -1,0 +1,12 @@
+version: '3'
+services:
+  node:
+    image: node:10-alpine
+    command: yarn dev
+    volumes:
+      - .:/home/app
+    working_dir: /home/app
+    ports:
+      - ${PORT}:${PORT}
+    env_file:
+      - .env

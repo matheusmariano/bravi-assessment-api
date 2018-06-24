@@ -12,14 +12,14 @@ const KNIGHT_MOVEMENTS = [
 ];
 
 export const getSquareName = (x, y) =>
-  String.fromCharCode(97 + y) + (x + 1);
+  String.fromCharCode(97 + x) + (y + 1);
 
 export const getCoordinatesFromNotation = (notation) => {
   const values = notation.match(/^([A-Za-z+])(\d+)$/).slice(1);
 
   return {
-    x: values[1] - 1,
-    y: values[0].toLowerCase().charCodeAt(0) - 97,
+    x: values[0].toLowerCase().charCodeAt(0) - 97,
+    y: values[1] - 1,
   };
 };
 

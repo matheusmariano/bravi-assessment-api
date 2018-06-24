@@ -2,20 +2,20 @@ import * as Chess from './';
 
 describe('Chess', () => {
   describe('getSquareName', () => {
-    test('(3, 2) must return c4', () => {
+    test('(2, 3) must return c4', () => {
       expect(
-        Chess.getSquareName(3, 2),
+        Chess.getSquareName(2, 3),
       ).toBe('c4');
     });
   });
 
   describe('getCoordinatesFromNotation', () => {
-    test('c4 must return (3, 2)', () => {
+    test('c4 must return (2, 3)', () => {
       expect(
         Chess.getCoordinatesFromNotation('c4'),
       ).toEqual({
-        x: 3,
-        y: 2,
+        x: 2,
+        y: 3,
       });
     });
   });
@@ -33,7 +33,7 @@ describe('Chess', () => {
       expect(
         Chess.getMovementsFromPiece('Na3', 4, 3),
       ).toEqual(
-        expect.arrayContaining(['B1', 'C2', 'C4']),
+        expect.arrayContaining(['B1', 'C2']),
       );
     });
   });

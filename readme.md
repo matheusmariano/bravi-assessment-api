@@ -34,3 +34,9 @@ Start the development server
 ```
 docker-compose up
 ```
+
+Wait until files be compiled.
+
+```
+Listening at port 4000.
+```

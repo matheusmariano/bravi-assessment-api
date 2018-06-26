@@ -29,5 +29,21 @@ describe('HomeController', () => {
         expect.arrayContaining(['B1', 'C2', 'C4', 'B5', 'd1', 'd3', 'c4', 'a4']),
       );
     });
+
+    test('Na3 nb2 must highlight B1, C2 in a 3x3 chessboard', async () => {
+      const response = await request
+        .post('/v1/preview')
+        .send({
+          pieces: ['Na3', 'nb2'],
+          cols: 3,
+          rows: 3,
+        });
+
+      expect(response.statusCode).toBe(200);
+
+      expect(response.body.highlights).toEqual(
+        expect.arrayContaining(['B1', 'C2']),
+      );
+    });
   });
 });
